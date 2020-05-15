@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Bookmarks</title>
+    <link href="./css/index.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quattrocento&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header><h1>BOOKMARKS</h1></header>
+      <div id="author">
+        <h3>Jorge Arturo Torres Cruz - A01176590</h3>
+        <h4>Lab 9</h4>
+      </div>
+      <div id="get-bookmarks" class="card">
+        <h3>GET</h3>
+        <form class="js-form">
+          <label for="get-title">Bookmark Title</label>
+          <input id="get-title" type="text" />
+          <button type="submit">SUBMIT</button>
+        </form>
+      </div>
+      <div id="post-bookmarks" class="card">
+        <h3>POST</h3>
+        <form class="js-form">
+          <label for="post-title">Bookmark Title</label>
+          <input id="post-title" type="text" />
+          <label for="post-desc">Description</label>
+          <input id="post-desc" type="text" />
+          <label for="post-url">URL</label>
+          <input id="post-url" type="text" />
+          <label for="post-rating">Rating</label>
+          <input id="post-rating" type="text" />
+          <button type="submit">SUBMIT</button>
+        </form>
+      </div>
+      <div id="put-bookmarks" class="card">
+        <h3>PATCH</h3>
+        <form class="js-form">
+          <label for="patch-id">Bookmark ID</label>
+          <input id="patch-id" type="text" />
+          <label for="patch-title">Bookmark Title</label>
+          <input id="patch-title" type="text" />
+          <label for="patch-desc">Description</label>
+          <input id="patch-desc" type="text" />
+          <label for="patch-url">URL</label>
+          <input id="patch-url" type="text" />
+          <label for="patch-rating">Rating</label>
+          <input id="patch-rating" type="text" />
+          <button type="submit">SUBMIT</button>
+        </form>
+      </div>
+      <div id="delete-bookmarks" class="card">
+        <h3>DELETE</h3>
+        <form class="js-form">
+          <label for="delete-id">Bookmark ID</label>
+          <input id="delete-id" type="text" />
+          <button type="submit">SUBMIT</button>
+        </form>
+      </div>
+      <div id="console"></div>
+    </div>
+    <script src="./js/index.js" type="application/javascript"></script>
+  </body>
+</html>

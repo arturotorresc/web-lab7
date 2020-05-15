@@ -9,6 +9,7 @@ const app = express();
 
 const jsonParser = bodyParser.json();
 
+app.use(express.static("public"));
 app.use(jsonParser);
 app.use(
   morgan(":method :url :status :res[content-length] - :response-time ms")
@@ -69,6 +70,7 @@ app.get("/bookmark", (req, res) => {
 
 app.post("/bookmarks", (req, res) => {
   const { title, description, url, rating } = req.body;
+  console.log(req.body);
   if (!title || !description || !url || !rating) {
     res.statusMessage = "You need to include all necessary params!";
     return res.status(406).end();
@@ -86,6 +88,7 @@ app.post("/bookmarks", (req, res) => {
       res.status(201).json({ bookmark });
     })
     .catch((err) => {
+      console.log(err);
       res.status(500).end();
     });
 });
