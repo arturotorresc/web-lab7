@@ -7,6 +7,8 @@ const Bookmark = require("./models/Bookmark");
 
 const app = express();
 
+require("dotenv");
+
 const jsonParser = bodyParser.json();
 
 app.use(express.static("public"));
@@ -131,16 +133,18 @@ app.patch("/bookmark/:id", async (req, res) => {
     .catch((err) => res.status(500).end());
 });
 
-app.listen(3000, () => {
-  console.log(`Server is listening on port ${3000}`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
   const dbOptions = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
     useFindAndModify: false,
   };
+  const uri = process.env.DB_URI || "mongodb://localhost:27017/webdev-bookmark";
   mongoose
-    .connect("mongodb://localhost:27017/webdev-bookmark", dbOptions)
+    .connect(uri, dbOptions)
     .then(() => console.log("Success connect to db"))
-    .catch((err) => console.log("Error", err));
+    .catch((err) => console.log("Error connecting to db........", err));
 });
